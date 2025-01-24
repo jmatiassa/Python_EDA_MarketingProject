@@ -1,4 +1,7 @@
 # EDA_MARKETING
+Proyecto en el que se demuestran las habilidades mediante python para realizar un analisis exploratorio de un conjunto de datos y sacar conclusiones que aporten valor al negocio.
+DISCLAIMER: Debido a limitaciones en la capacidad de los archivos en github los dataframes con los que se ha ido trabajando no se han podido subir pero dado el propósito demostrativo de este proyecto en las carpetas de jupyters y src se encuentra todo el código que se ha escrito para ejecutar el proyecto.
+
 
 ## Contenido:
 1. Objetivo del proyecto
