@@ -1,64 +1,68 @@
 # EDA_MARKETING
-Proyecto en el que se demuestran las habilidades mediante python para realizar un analisis exploratorio de un conjunto de datos y sacar conclusiones que aporten valor al negocio.
-DISCLAIMER: Debido a limitaciones en la capacidad de los archivos en github los dataframes con los que se ha ido trabajando no se han podido subir pero dado el propósito demostrativo de este proyecto en las carpetas de jupyters y src se encuentra todo el código que se ha escrito para ejecutar el proyecto.
+Project that demonstrates the skills using python to perform an exploratory analysis of a set of data and draw conclusions that add value to the business.
+DISCLAIMER: Due to limitations in the capacity of the files in github the dataframes we have been working with could not be uploaded but given the demonstrative purpose of this project in the jupyters and src folders you can find all the code that has been written to run the project.
 
 
-## Contenido:
-1. Objetivo del proyecto
-2. Documentación inicial del proyecto
-3. Cració del entorno de desarrollo para el centro de control de las versiones.
-4. Procesado de datos
-5. Visualización de datos
+## Contents:
+1. Aim of the project
+2. Initial project documentation
+3. Creation of the development environment for the version control centre.
+4. Data processing
+5. Data visualisation
 
-## Objetivo del proyecto
-Mediante este proyecto se pretende obtener conclusiones relevantes para la toma de decisiones sobre los resultados de las campañas de marketing de una empresa. Para ello se requiere que se utilicen los conocimientos adquiridos en el bloque de python y de análisis de datos en python del curso. En concreto, los requisitos son:
-- Transformación y limpieza de datos.
-- Análisis descriptivo de los datos.
-- Visualización de los datos.
-- Informe explicativo del análisis.
+## Aim of the project
+The aim of this project is to draw decision-relevant conclusions about the results of a company's marketing campaigns. This requires the use of the knowledge acquired in the Python and Python data analysis block of the course. Specifically, the requirements are:
+- Data transformation and data cleaning.
+- Descriptive analysis of data.
+- Data visualisation.
+- Explanatory report of the analysis.
   
-## Documentación inicial del proyecto
-Para realizar el trabajo se nos presenta la siguiente información:
-- Un documento word llamado DataProject_Proyecto EDA con Python que tiene la información de contexto del proyecto así como enunciado y definición de los campos que hay en los ficheros. También instrucciones para la entrega, consejos y criterios de evaluación.
-- Documento csv 'bank-additional': este documento contiene la ifnormación sobre los registros de las campañas de marketing directo
-- Documento csv 'customer-details.xlsx: es un archivo excel con información sobre los clientes del banco
+## Initial project documentation
 
-## Creación del entorno de desarrollo para el control de las versiones:
-### Mediante la consola del sistema se hacen las siguientes acciones:
-- Creación de una carpeta llamada EDA_MAKETING en el escritorio, clonada de la ya creada en github
-- Se añade la carpeta venv que almacenará los distintos programas utilizados en el entorno y sus históricos de versiones
-- Se activa el entorno mediante la llamada a Activate por consola
-- Se instala una nueva versión disponible de pip
-- Se crea el documento requiremens.txt que documentará el histórico de versiones
-- Se sube el entorno a github:
-(venv) C:\Users\matis\Desktop\EDA_MARKETING>git add .
+To carry out the work we are presented with the following information:
+- A word document called DataProject_Project_Project EDA with Python that has the context information of the project as well as statement and definition of the fields that are in the files.Also delivery instructions, tips and evaluation criteria.
+- csv document ‘bank-additional’: this document contains the information about the records of the direct marketing campaigns.
+- csv document ‘customer-details.xlsx’: this is an excel file with information about the bank's customers.
 
-(venv) C:\Users\matis\Desktop\EDA_MARKETING> git commit -m "Creación del sistema de carpetas y entorno"
+## Creation of the development environment for version control:
+
+### Using the system console, the following actions are done:
+- Creation of a folder called EDA_MAKETING on the desktop, cloned from the one already created in github.
+- Add the folder venv that will store the different programs used in the environment and their version history.
+- Activate the environment by calling Activate through the console
+- A new available version of pip is installed
+- Create the requiremens.txt document to document the version history
+- Upload the environment to github:
+(venv) C:\UsersmatisesDesktopAssembly>git add .
+
+(venv) C:\UsersersmatismatisDesktopA_MARKETING> git commit -m ‘Creation of the folder system and environment’.
 On branch main
-Your branch is up to date with 'origin/main'.
+Your branch is up to date with ‘origin/main’.
 
 nothing to commit, working tree clean
 
-(venv) C:\Users\matis\Desktop\EDA_MARKETING> git push
+(venv) C:\UsersersmatisktopEDA_MARKETING> git push
 Everything up-to-date
 
-(venv) C:\Users\matis\Desktop\EDA_MARKETING>
+(venv) C:\UsersersmatismatisDesktopAEMA_MARKETING> git push Everything up-to-date.
 
-## Procesado de datos
-El análisis de los datos proporcionados requiere ser transformado. De esa forma se puede obtener información relevante para el objetivo del proyecto. Para se han seguido los siguientes pasos:
+## Data processing
 
-1. Eda preeliminar de limpieza de datos
-    Se utiliza el jupyter notebook eda_limpieza y el documento de soporte src sp_eda_limpieza para: importar las fuentes de datos bank-additional y customer-details;poner iniciales en mayusculas en las columnas; convertir los datos a su formato int, float espacífico;eliminar columnas con datos no relevantes; cambiar carácteres; unir los dataframes 
-2. Transformación de las coordenadas mediante geolocalización
-    Se utiliza el csv eda_mk_ok.csv para aplicar una función de geocoding creada en el src sp_geocode en el notebook geocode_bank.ipynb. Como output se crea el csv bankadditional_geocoded.csv
-3. Análisis de las columnas categóricas
-    Se estudian los valores de las distintas columnas categóricas y se transforman los valores de los países geocodificados de sus siglas a valores completos
-    Se rellenan los nulos con unknown o con la moda dependiendo de su volumetría. Para ello se importa el csv vankadditional_geocoded.csv y se trabaja en el notebook nulos_categorias.ipynb. Se crea el src sp_categorias_nulos.py para crear formulas que den soporte al código y sp_vusualizacion para los paquetes de visualización. Como output se exporta a csv el documento df_gestion_nulos_ok
-4. Análisis de las columnas numéricas
-    Se realiza un análisis del dataframe df_gestion_nulos_ok.csv en el notebook columnas_numericas.ipynb. Se utiliza como soporte el src sp_columnas_numericas.py. Se extrae como output el csv df_nulos_numericos_ok.csv
-5. Visualización y análisis de la información
-    Se realiza un análisis del dataframe df_nulos_numericos_ok.csv en el notebook analisis_subscripciones.ipynb, se extraen conclusiones y se utiliza el sp_analisis_subscripciones para guardar las fórmulas. 
-    Durante este documento de trabajo se extrae la información necesaria que se utilizará para comunicar las conclusiones
+The analysis of the data provided needs to be transformed. In this way, information relevant to the objective of the project can be obtained. The following steps have been followed:
 
-El informe de resultados sobre la campaña de márketing se presenta en el documento PDF Informe_EDA_Marketing_directo.v1. En este ifnorme se puede tener una visión clara sobre las conclusiones obtenidas durante el análisis y las estrategias propuestas que permitan acercar futuras estrategias a un mayor número de ventas. A continuación se presentan las imágenes del informe
+1. Preliminary data cleaning exercise
+    The jupyter notebook eda_cleaning and the supporting document src sp_eda_cleaning are used to: import the data sources bank-additional and customer-details; initialise the columns with capital letters; convert the data to their int, float, specific format; delete columns with non-relevant data; change characters; merge the dataframes. 
+2. Transformation of coordinates by geolocalisation
+    The csv eda_mk_ok.csv is used to apply a geocoding function created in the src sp_geocode in the notebook geocode_bank.ipynb. As output the csv bankadditional_geocoded.csv is created.
+3. Analysis of the categorical columns
+    The values of the different categorical columns are studied and the values of the geocoded countries are transformed from their acronyms to full values.
+    The nulls are filled in with unknown or with the mode depending on their volumetrics. For this, the csv vankadditional_geocoded.csv is imported and worked on in the notebook null_categories.ipynb. The src sp_categorias_nulos.py is created to create formulas to support the code and sp_vusualisation for the visualisation packages. As output the document df_gestion_nulos_ok is exported to csv.
+4. Analysis of the numeric columns
+    An analysis of the dataframe df_gestion_nulos_ok.csv is performed on the notebook columnas_numericas.ipynb. The src sp_columns_numerical_columns.py is used as support. The csv df_numerical_null_numbers_ok.csv is extracted as output.
+5. Visualisation and analysis of the information
+    An analysis of the dataframe df_nulos_numericos_ok.csv is performed in the notebook analisis_subscripciones.ipynb, conclusions are drawn and the sp_analisis_subscripciones is used to save the formulas. 
+    During this working document the necessary information is extracted that will be used to report the conclusions.
+
+The report on the results of the marketing campaign is presented in the PDF document Informe_EDA_Marketing_directo.v1. In this report you can get a clear view on the conclusions drawn during the analysis and the proposed strategies to bring future strategies closer to a higher number of sales. Below are the images of the report
+
 
