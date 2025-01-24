@@ -59,28 +59,3 @@ El análisis de los datos proporcionados requiere ser transformado. De esa forma
 
 El informe de resultados sobre la campaña de márketing se presenta en el documento PDF Informe_EDA_Marketing_directo.v1. En este ifnorme se puede tener una visión clara sobre las conclusiones obtenidas durante el análisis y las estrategias propuestas que permitan acercar futuras estrategias a un mayor número de ventas. A continuación se presentan las imágenes del informe
 
-![alt text](image-1.png)
-
-![alt text](image-2.png)
-
-![alt text](image-3.png)
-
-![alt text](image-4.png)
-
-![alt text](image-5.png)
-
-![alt text](image-6.png)
-
-![alt text](image-7.png)
-
-![alt text](image-8.png)
-
-![alt text](image-9.png)
-
-![alt text](image-10.png)
-
-![alt text](image-11.png)
-
-![alt text](image-12.png)
-
-![alt text](image-13.png)
