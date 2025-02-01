@@ -63,6 +63,6 @@ The analysis of the data provided needs to be transformed. In this way, informat
     An analysis of the dataframe df_nulos_numericos_ok.csv is performed in the notebook analisis_subscripciones.ipynb, conclusions are drawn and the sp_analisis_subscripciones is used to save the formulas. 
     During this working document the necessary information is extracted that will be used to report the conclusions.
 
-The report on the results of the marketing campaign is presented in the PDF document Informe_EDA_Marketing_directo.v1. In this report you can get a clear view on the conclusions drawn during the analysis and the proposed strategies to bring future strategies closer to a higher number of sales. Below are the images of the report
+The report on the results of the marketing campaign is presented in the PDF document Informe_EDA_Marketing_directo.v1. In this report you can get a clear view on the conclusions drawn during the analysis and the proposed strategies to bring future strategies closer to a higher number of sales.
 
 
