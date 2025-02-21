@@ -1,6 +1,6 @@
 # EDA_MARKETING
 Project that demonstrates the skills using python to perform an exploratory analysis of a set of data and draw conclusions that add value to the business.
-To Know information about the data source there is information in Instrucciones.
+In Instruccines there is information about the data sources and the goal of the project.
 
 ## Contents:
 1. Aim of the project
