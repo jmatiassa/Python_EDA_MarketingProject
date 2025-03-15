@@ -5,13 +5,33 @@ import plotly.express as px
 
 #Función para detectar variables continuas
 def detectar_continuas(df):
-    variables_continuas=df.select_dtypes(include=['float64','int64']).columns.tolist()
+    """
+    Detecta y devuelve una lista de las variables continuas en un DataFrame.
+
+    Args:
+        df (pd.DataFrame): DataFrame de Pandas del cual se extraerán las variables continuas.
+
+    Returns:
+        list: Lista de nombres de columnas que contienen variables continuas (float64 o int64).
+    """
+    variables_continuas = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
     return variables_continuas
+
 
 #Función para detectar variables categoricas
 def detectar_categoricas(df):
-    variables_categoricas=df.select_dtypes(exclude=['float64','int64']).columns.tolist()
+    """
+    Detecta y devuelve una lista de las variables categóricas en un DataFrame.
+
+    Args:
+        df (pd.DataFrame): DataFrame de Pandas del cual se extraerán las variables categóricas.
+
+    Returns:
+        list: Lista de nombres de columnas que contienen variables categóricas (excluyendo float64 e int64).
+    """
+    variables_categoricas = df.select_dtypes(exclude=['float64', 'int64']).columns.tolist()
     return variables_categoricas
+
 
 
 
@@ -60,11 +80,25 @@ def plot_subscription_rate(df, variables_categoricas, target_variable):
 
 #calcular kpi de tasa de conversión global
 
-def calcular_tasa_conversion(df,Columna_conversion):
-    ventas=df[df[Columna_conversion]==1].shape[0]
-    total_registros=df.shape[0]
-    tasa_conversion=round(((ventas/total_registros)*100),2)
+def calcular_tasa_conversion(df, Columna_conversion):
+    """
+    Calcula la tasa de conversión en un DataFrame.
+
+    La tasa de conversión se define como el porcentaje de registros donde 
+    la columna de conversión tiene el valor 1, respecto al total de registros.
+
+    Args:
+        df (pd.DataFrame): DataFrame que contiene los datos.
+        Columna_conversion (str): Nombre de la columna que indica la conversión (valor 1 significa conversión).
+
+    Returns:
+        float: Tasa de conversión expresada como un porcentaje con dos decimales.
+    """
+    ventas = df[df[Columna_conversion] == 1].shape[0]
+    total_registros = df.shape[0]
+    tasa_conversion = round(((ventas / total_registros) * 100), 2)
     return tasa_conversion
+
 
 #Función para crear una distribucióni temporal ordenada por tiempo
 def plot_subscription_by_month(df, date_column, target_variable):
@@ -100,24 +134,66 @@ def plot_subscription_by_month(df, date_column, target_variable):
     plt.show()
 
 #Función qque calcula la duración de la campaña
-def calcular_duración_campaña(df,fecha):
-    fecha_min=df[fecha].min()
-    fecha_max=df[fecha].max()
-    duracion_campaña=(fecha_max-fecha_min).days/365.25
-    return duracion_campaña    
+def calcular_duración_campaña(df, fecha):
+    """
+    Calcula la duración de una campaña en años a partir de una columna de fechas en un DataFrame.
+
+    Args:
+        df (pd.DataFrame): DataFrame que contiene los datos.
+        fecha (str): Nombre de la columna que contiene las fechas de la campaña.
+
+    Returns:
+        float: Duración de la campaña en años (considerando años bisiestos con un promedio de 365.25 días por año).
+    """
+    fecha_min = df[fecha].min()
+    fecha_max = df[fecha].max()
+    duracion_campaña = (fecha_max - fecha_min).days / 365.25
+    return duracion_campaña
+   
 
 #Función que muestra las volumetrías de nº leads y nº conversiones por columna categórica
 def tabla_volumetrias_subscripciones(df, variables_categoricas, target_variable):
-    for  col in variables_categoricas:
-       total_counts = df.groupby(col)[target_variable].count() 
-       subscription_counts = df.groupby(col)[target_variable].sum() 
-       print(total_counts)
-       print("-----------------------------")
-       print(subscription_counts)
-       print("-----------------------------")
+    """
+    Genera tablas de volumen de suscripciones por cada variable categórica en el DataFrame.
+
+    Para cada variable categórica proporcionada, esta función calcula y muestra:
+    - El número total de registros por categoría.
+    - El número total de suscripciones (sumatorio de la variable objetivo) por categoría.
+
+    Args:
+        df (pd.DataFrame): DataFrame que contiene los datos.
+        variables_categoricas (list): Lista de nombres de las columnas categóricas que se analizarán.
+        target_variable (str): Nombre de la columna que representa las suscripciones (variable objetivo).
+    
+    Returns:
+        None: La función imprime las tablas, pero no devuelve ningún valor.
+    """
+    for col in variables_categoricas:
+        total_counts = df.groupby(col)[target_variable].count() 
+        subscription_counts = df.groupby(col)[target_variable].sum() 
+        print(total_counts)
+        print("-----------------------------")
+        print(subscription_counts)
+        print("-----------------------------")
+
 
 #Función que muestra las volumetrías de leads y conversiones distribuidas por meses
 def tabla_fechas(df, date_column, target_variable):
+    """
+    Genera una tabla de total de registros y suscripciones por mes y año.
+
+    La función agrupa los datos por mes y año, y luego calcula y muestra:
+    - El número total de registros por mes/año.
+    - El número total de suscripciones (sumatorio de la variable objetivo) por mes/año.
+
+    Args:
+        df (pd.DataFrame): DataFrame que contiene los datos.
+        date_column (str): Nombre de la columna que contiene las fechas para agrupar por mes/año.
+        target_variable (str): Nombre de la columna que representa las suscripciones (variable objetivo).
+    
+    Returns:
+        None: La función imprime las tablas, pero no devuelve ningún valor.
+    """
     df['month_year'] = df[date_column].dt.to_period('M')
     total_counts = df.groupby('month_year')[target_variable].count()  # Total de registros por mes/año
     subscription_counts = df.groupby('month_year')[target_variable].sum()  # Total de suscripciones por mes/año
